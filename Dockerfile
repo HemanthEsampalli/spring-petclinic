@@ -5,6 +5,6 @@ FROM openjdk:25-ea-17-jdk as RUN
 RUN adduser -D -h /usr/share/demo -s /bin/bash user1
 USER user1
 WORKDIR /usr/share/demo
-COPY --FROM = build /target/*.jar .
+COPY --FROM= build /target/*.jar .
 EXPOSE 8080/tcp
 CMD ["java", "-jar", "*.jar"]
