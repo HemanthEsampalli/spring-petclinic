@@ -7,7 +7,7 @@ RUN git clone https://github.com/HemanthEsampalli/spring-petclinic.git && \
 FROM openjdk:25-ea-17-jdk AS run
 RUN adduser -D -h /usr/share/demo -s /bin/sh myusr
 USER myusr
-WORKDIR /usr/share/demo
+WORKDIR /myusr/share/demo
 COPY --from=build /spring-petclinic/target/*.jar .
 EXPOSE 8080/tcp
 CMD ["java", "-jar", "*.jar"]
